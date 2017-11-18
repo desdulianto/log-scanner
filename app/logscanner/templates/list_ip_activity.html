@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{% block style %}
+    {{ super() }}
+    <style>
+    .suspected {background-color: darkorange}
+    </style>
+{% endblock %}
 {% block body %}
     <h1>{{ ip }} activities</h1>
     <table>

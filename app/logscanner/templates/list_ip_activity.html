@@ -2,12 +2,12 @@
 {% block style %}
     {{ super() }}
     <style>
-    .suspected {background-color: darkorange}
+    .suspected {background-color: darkorange!important;}
     </style>
 {% endblock %}
 {% block body %}
     <h1>{{ ip }} activities</h1>
-    <table>
+    <table class="table table-striped">
         <tr>
             <th>Timestamp</th>
             <th>URI</th>

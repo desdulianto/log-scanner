@@ -7,7 +7,7 @@
         </tr>
         {% for entry in entries %}
         <tr>
-            <td>{{ entry.0 }}</td>
+            <td><a href="{{ url_for('.ip_activity', ip=entry.0) }}">{{ entry.0 }}</a></td>
         </tr>
         {% endfor %}
     </table>

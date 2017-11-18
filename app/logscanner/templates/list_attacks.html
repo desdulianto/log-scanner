@@ -15,7 +15,7 @@
         {% for entry in entries %}
         <tr>
             <td>{{ entry.entry.timestamp }}</td>
-            <td>{{ entry.ip }}</td>
+            <td><a href="{{ url_for('.ip_activity', ip=entry.ip) }}">{{ entry.ip }}</a></td>
             <td>{{ entry.country }}</td>
             <td>{{ entry.entry.uri }}</td>
             <td>{{ entry.entry.query }}</td>

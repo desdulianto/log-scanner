@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
+    <h1>Log Scanner</h1>
     <form method="post" action="{{ url_for('log_scanner_page.upload') }}" enctype="multipart/form-data">
         <div class="form-group">
             <label>Upload Log File (*.zip/*.log):</label>

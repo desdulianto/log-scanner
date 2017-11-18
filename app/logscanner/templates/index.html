@@ -11,11 +11,11 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-    {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
-        <ul class=flashes>
-        {% for message in messages %}
-          <li>{{ message }}</li>
+        <ul>
+        {% for category, message in messages %}
+          <li class="alert alert-{{ category }}">{{ message }}</li>
         {% endfor %}
         </ul>
       {% endif %}

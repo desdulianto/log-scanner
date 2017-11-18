@@ -22,7 +22,7 @@ def create_app(config=None):
     db.init_app(app)
     migrate.init_app(app, db)
 
-    from app.logscanner import logscanner_page
+    from app.logscanner.views import logscanner_page
     app.register_blueprint(logscanner_page)
 
     return app

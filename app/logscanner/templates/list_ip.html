@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+    <table>
+        <tr>
+            <th>Client IP</th>
+        </tr>
+        {% for entry in entries %}
+        <tr>
+            <td>{{ entry.0 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

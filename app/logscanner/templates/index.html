@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Log Scanner</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block body %}
     <form method="post" action="{{ url_for('log_scanner_page.upload') }}" enctype="multipart/form-data">
-        <div>
-            <label for="log_file">Log File (*.zip, *.log):</label>
-            <input type="file" name="log_file">
-        </div>
-        <div>
-            <input type="submit" value="Upload">
+        <div class="form-group">
+            <label>Upload Log File (*.zip/*.log):</label>
+            <label class="custom-file">
+                <input class="custom-file-input" type="file" name="log_file">
+                <span class="custom-file-control"></span>
+            </label>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
     {% with messages = get_flashed_messages() %}
@@ -23,5 +19,4 @@
         </ul>
       {% endif %}
     {% endwith %}
-</body>
-</html>
+{% endblock %}

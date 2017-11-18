@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log Scanner</title>
+</head>
+<body>
+    <form method="post" action="{{ url_for('log_scanner_page.upload') }}" enctype="multipart/form-data">
+        <div>
+            <label for="log_file">Log File (*.zip, *.log):</label>
+            <input type="file" name="log_file">
+        </div>
+        <div>
+            <input type="submit" value="Upload">
+        </div>
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

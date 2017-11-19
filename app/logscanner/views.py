@@ -49,7 +49,7 @@ def upload():
     if request.method == 'POST':
         log_file = request.files.get('log_file', None)
         if log_file is None:
-            flash('Log file not found!')
+            flash('Log file not found!', 'error')
             return redirect(request.url)
 
         try:
@@ -58,8 +58,8 @@ def upload():
             # send the file to be scanned
             scan_log(os.path.join(log_upload.config.destination, filename))
 
-            flash('Log uploaded. Scanning...')
+            flash('Log uploaded and scanned...', 'success')
             return redirect(url_for('.index'))
         except flask_uploads.UploadNotAllowed:
-            flash('File not allowed for upload')
+            flash('File not allowed for upload', 'error')
     return render_template('index.html')

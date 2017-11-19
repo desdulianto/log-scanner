@@ -16,6 +16,8 @@ services:
     db:
         container_name: log-scanner-db
         build: ./db
+        ports:
+            - 5432
         environment:
             POSTGRES_PASSWORD: postgres
         healthcheck:

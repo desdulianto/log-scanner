@@ -59,7 +59,7 @@ def upload():
             scan_log(os.path.join(log_upload.config.destination, filename))
 
             flash('Log uploaded and scanned...', 'success')
-            return redirect(url_for('.index'))
         except flask_uploads.UploadNotAllowed:
             flash('File not allowed for upload', 'error')
+        return redirect(url_for('.index'))
     return render_template('index.html')

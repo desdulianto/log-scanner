@@ -63,8 +63,6 @@ def scan_iis_log(log, scanners):
         (?P<win32status>\d+)\ 
         (?P<timetaken>\d+)''', re.IGNORECASE|re.MULTILINE|re.VERBOSE)
 
-    geoip_reader = geolite2.reader()
-
     with log as f:
         process_line = ''
         for i, line in enumerate(f):
